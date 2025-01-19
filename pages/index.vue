@@ -43,8 +43,8 @@ import Contact from '../components/home/Contact.vue';
 export default {
   components: { Hero, Services, Goals, About, Offers, Design, WebApplication, Partnership, Contact },
   created(){
-    if(this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.md) this.page_orientation = 'isMobile'
-    else if(this.$vuetify.breakpoint.lg || this.$vuetify.breakpoint.xl) this.page_orientation = 'isDesktop'
+    if(this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs) this.page_orientation = 'isMobile'
+    else if(this.$vuetify.breakpoint.lg || this.$vuetify.breakpoint.xl || this.$vuetify.breakpoint.md ) this.page_orientation = 'isDesktop'
   },
   data(){
     return{
