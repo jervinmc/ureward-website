@@ -2,7 +2,7 @@
     <div>
         <v-card color="primary" height="700" class="d-flex align-center px-10">
             <v-row class="white--text px-16" align-self="center">
-                <v-col cols="4" align-self="center">
+                <v-col :cols="page_orientation == 'isMobile' ? 12 : 4" align-self="center">
                     <v-row>
                         <v-col cols="12" align="center">
                             <v-card color="white" class="d-flex align-center justify-center pa-10">
@@ -22,7 +22,7 @@
                         </v-col>
                     </v-row>
                 </v-col>
-                <v-col class="pa-10" cols="8" align-self="center">
+                <v-col class="pa-10" :cols="page_orientation == 'isMobile' ? 12 : 8" align-self="center">
                     <v-img src="/images/webapplication-image.jpg" />
                 </v-col>
             </v-row>
@@ -32,7 +32,9 @@
 
 <script>
 
-export default {};
+export default {
+    props:['page_orientation']
+};
 </script>
 
 <style></style>

@@ -1,29 +1,29 @@
 <template>
   <div>
-    <hero />
+    <hero :page_orientation="this.page_orientation" />
     <div>
-      <Services />
+      <Services :page_orientation="this.page_orientation" />
     </div>
     <div>
-      <Goals />
+      <Goals :page_orientation="this.page_orientation"  />
     </div>
     <div>
-      <About />
+      <About :page_orientation="this.page_orientation"  />
     </div>
     <div>
-      <Offers />
+      <Offers :page_orientation="this.page_orientation"  />
     </div>
     <div>
-      <Design />
+      <Design :page_orientation="this.page_orientation"  />
     </div>
     <div>
-      <WebApplication />
+      <WebApplication :page_orientation="this.page_orientation"  />
     </div>
     <div>
-      <Partnership />
+      <Partnership :page_orientation="this.page_orientation"  />
     </div>
     <div>
-      <Contact />
+      <Contact :page_orientation="this.page_orientation"  />
     </div>
   </div>
 </template>
@@ -42,7 +42,15 @@ import Contact from '../components/home/Contact.vue';
 
 export default {
   components: { Hero, Services, Goals, About, Offers, Design, WebApplication, Partnership, Contact },
-
+  created(){
+    if(this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.md) this.page_orientation = 'isMobile'
+    else if(this.$vuetify.breakpoint.lg || this.$vuetify.breakpoint.xl) this.page_orientation = 'isDesktop'
+  },
+  data(){
+    return{
+      page_orientation:''
+    }
+  }
 }
 </script>
 

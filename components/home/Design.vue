@@ -2,10 +2,10 @@
     <div>
         <v-card color="white" class="d-flex align-center">
             <v-row class="px-16" align-self="center">
-                <v-col class="pa-10" cols="8" align-self="center">
+                <v-col class="pa-10" :cols="page_orientation == 'isMobile' ? 12 : 8"align-self="center">
                     <v-img src="/images/design-image.jpg" fit="cover" />
                 </v-col>
-                <v-col cols="4" align-self="center">
+                <v-col :cols="page_orientation == 'isMobile' ? 12 : 4" align-self="center">
                     <div>
                         <div class="text-h2 py-5 secondary--text">
                             <b>IT Solutions</b>
@@ -27,7 +27,9 @@
 
 <script>
 
-export default {};
+export default {
+    props:['page_orientation']
+};
 </script>
 
 <style></style>

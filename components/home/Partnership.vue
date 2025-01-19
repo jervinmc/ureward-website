@@ -2,7 +2,7 @@
     <div>
         <v-card color="white" height="500" class="d-flex align-center">
             <v-row class="px-16" align-self="center">
-                <v-col cols="6" align-self="center">
+                <v-col :cols="page_orientation == 'isMobile' ? 12 : 6" align-self="center">
                     <div>
                         <div class="text-h2 py-5">
                             <b>We are directly involved in t​he process</b>
@@ -13,7 +13,7 @@
                     </div>
                 </v-col>
                 <v-spacer></v-spacer>
-                <v-col class="pa-10" cols="6" align-self="center">
+                <v-col class="pa-10" :cols="page_orientation == 'isMobile' ? 12 : 6" align-self="center">
                     <div>
                         Nibh tortor id aliquet lectus. Platea dictumst vestibulum rhoncus est pellentesque elit
                         ullamcorper. In hac habitasse platea dictumst quisque.
@@ -34,7 +34,9 @@
 
 <script>
 
-export default {};
+export default {
+    props:['page_orientation']
+};
 </script>
 
 <style></style>

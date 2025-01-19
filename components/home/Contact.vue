@@ -34,6 +34,7 @@
 <script>
 
 export default {
+    props:['page_orientation'],
     data(){
         return{
             card_list:[

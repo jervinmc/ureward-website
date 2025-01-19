@@ -8,12 +8,12 @@
         </div>
         <div class="pt-10">
             <v-row>
-                <v-col cols="6">
+                <v-col :cols="page_orientation == 'isMobile' ? 12 : 6">
                     <v-img src="/images/services-image.jpg"></v-img>
                 </v-col>
-                <v-col cols="6" align-self="center">
+                <v-col :cols="page_orientation == 'isMobile' ? 12 : 6" align-self="center">
                     <v-row>
-                        <v-col cols="6" v-for="card_info in card_list">
+                        <v-col :cols="page_orientation == 'isMobile' ? 12 : 6" v-for="card_info in card_list">
                             <v-card height="200px" color="secondary" class="d-flex align-center justify-center" dark>
                                 <div>
                                     <div>
@@ -34,6 +34,7 @@
 
 <script>
 export default {
+    props:['page_orientation'],
     data() {
         return {
             card_list: [
