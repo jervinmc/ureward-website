@@ -1,0 +1,43 @@
+@import 'animate.css';
+
+@font-face {
+    font-family: "Avenir";
+    src: local("Avenir"),
+        url(~assets/fonts/avenir_ff/AvenirLTStd-Book.otf);
+}
+
+html {
+    font-family: "Avenir";
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.pointer:hover {
+    cursor: pointer;
+    font-weight: bold;
+    color: #ef5777;
+}
+
+.centralized-item {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.v-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+
+
+
+.bounce {
+    display: inline-block;
+
+    animation: fadeInLeft;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s;
+    /* don't forget to set a duration! */
+}
