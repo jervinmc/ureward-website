@@ -28,39 +28,39 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  auth: {
-    strategies: {
-      local: {
-        scheme: "refresh",
-        token: {
-          property: "access",
-          maxAge: 900
-        },
-        refreshToken: {
-          property: "refresh",
-          data: "refresh",
-          maxAge: 1 * 24 * 60 * 60
-        },
-        user: {
-          property: "user"
-          // autoFetch: false
-        },
-        endpoints: {
-          login: { url: "/auth/login/", method: "post",propertyName: 'access' },
-          refresh: { url: "/auth/refresh/", method: "post" },
-          user: { url: "/auth/user/", method: "get" },
-          logout: { url: "/auth/logout/", method: "post" }
-        },
-        autoLogout: false
-      }
-    },
-    redirect: {
-      login: "/login",
-      logout: "/",
-      callback: "/login",
-      home: "/dashboard"
-    }
-  },
+  // auth: {
+  //   strategies: {
+  //     local: {
+  //       scheme: "refresh",
+  //       token: {
+  //         property: "access",
+  //         maxAge: 900
+  //       },
+  //       refreshToken: {
+  //         property: "refresh",
+  //         data: "refresh",
+  //         maxAge: 1 * 24 * 60 * 60
+  //       },
+  //       user: {
+  //         property: "user"
+  //         // autoFetch: false
+  //       },
+  //       endpoints: {
+  //         login: { url: "/auth/login/", method: "post",propertyName: 'access' },
+  //         refresh: { url: "/auth/refresh/", method: "post" },
+  //         user: { url: "/auth/user/", method: "get" },
+  //         logout: { url: "/auth/logout/", method: "post" }
+  //       },
+  //       autoLogout: false
+  //     }
+  //   },
+  //   redirect: {
+  //     login: "/login",
+  //     logout: "/",
+  //     callback: "/login",
+  //     home: "/dashboard"
+  //   }
+  // },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "~layouts/global.css",
