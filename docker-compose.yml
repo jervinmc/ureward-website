@@ -14,9 +14,10 @@ services:
   nginx:
     image: nginx
     ports:
-      - "80:80"  # Map port 80 of host to port 80 in Nginx container
+      - "80:80"  # Expose port 80 to the outside world
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf  # Map custom Nginx config
-      - ./static:/usr/share/nginx/html/static  # Map static folder
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf  # Custom Nginx config
+      - ./dist:/usr/share/nginx/html  # Mount dist folder to serve _nuxt and static files
     depends_on:
       - nuxt
+
